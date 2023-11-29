@@ -6,15 +6,19 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="copyright-text">
-                        <p>&copy; 2023. All rights reserved. Powered by Vesen Computing</p>
+                        <p>&copy; <?= date('Y') ?>. All rights reserved. Powered by Vesen Computing</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="footer-nav float-lg-right">
                         <ul>
-                            <li><a href="#">Setting & Privacy </a></li>
-                            <li><a href="#">Faqs</a></li>
-                            <li><a href="#">Services</a></li>
+
+                            <li class="ListFooter"><a href="index">Home</a></li>
+                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#about">About</a></li>
+                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#objectives">Objectives</a></li>
+                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#donate">Donate</a></li>
+                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#contact">Contact Us</a></li>
+                            <li><a href="https://samidoh.org/shop/shop/">Store</a></li>
                         </ul>
                     </div>
                 </div>
@@ -51,6 +55,90 @@
 <!--====== Main js ======-->
 <script src="assets/js/theme.js"></script>
 
+<script>
+    console.log("Script executed!");
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = [
+            "assets/images/sam/sami6.jpeg",
+            "assets/images/sam/sam2.jpg",
+            "assets/images/sam/sami2.jpeg",
+            // Add more image paths as needed
+        ];
+
+        const imgElement = document.querySelector('#heroImg');
+        let currentIndex = 0;
+
+        function fadeIn() {
+            imgElement.style.opacity = parseFloat(imgElement.style.opacity) + 0.01;
+
+            if (parseFloat(imgElement.style.opacity) < 1) {
+                requestAnimationFrame(fadeIn);
+            } else {
+                setTimeout(showNextImage, 5000); // Change the delay (in milliseconds) as needed
+            }
+        }
+
+        function showNextImage() {
+            imgElement.style.opacity = 0;
+
+            setTimeout(function() {
+                imgElement.src = images[currentIndex];
+                fadeIn();
+
+                currentIndex = (currentIndex + 1) % images.length;
+            }, 1000); // Adjust the delay to match the fadeIn duration
+        }
+
+        showNextImage();
+    });
+</script>
+
+
+<script>
+  let curIndex = 0;
+  const totalItems = document.querySelectorAll('.carousel-item').length;
+  const carouselInner = document.querySelector('.carousel-inner');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const interval = 3000; // Set the interval time in milliseconds (e.g., 3000 for 3 seconds)
+
+  // Add event listeners to navigation buttons
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  // Set up automatic sliding
+  setInterval(() => {
+    showNext();
+  }, interval);
+
+  // Function to show the next slide
+  function showNext() {
+    if (curIndex < totalItems - 1) {
+      curIndex++;
+    } else {
+      curIndex = 0;
+    }
+    updateCarousel();
+  }
+
+  // Function to show the previous slide
+  function showPrev() {
+    if (curIndex > 0) {
+      curIndex--;
+    } else {
+      curIndex = totalItems - 1;
+    }
+    updateCarousel();
+  }
+
+  // Function to update the carousel position
+  function updateCarousel() {
+    const newTransformValue = -curIndex * 100 + '%';
+    carouselInner.style.transform = 'translateX(' + newTransformValue + ')';
+  }
+</script>
+
+
 <style>
     .StoryDiv {
         padding: 10px;
@@ -79,6 +167,10 @@
         display: none;
     }
 
+    .ListFooter {
+        font-size: 14px;
+    }
+
     @media screen and (max-width:600px) {
         .service-item {
             height: auto;
@@ -93,6 +185,7 @@
         }
 
     }
+
 </style>
 
 

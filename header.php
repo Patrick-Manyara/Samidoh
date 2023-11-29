@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        #heroImg {
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,16 +48,16 @@
                         <!-- Navbar Close -->
                         <div class="navbar-close"><i class="far fa-times"></i></div>
                         <!-- Nav Search -->
-                       
+
                         <!-- Main Menu -->
                         <nav class="main-menu">
                             <ul>
                                 <li class="menu-item"><a href="index" class="nav-link">Home</a></li>
-                                <li class="menu-item"><a href="#about" class="nav-link">About</a></li>
-                                <li class="menu-item"><a href="#objectives" class="nav-link">Objectives</a></li>
-                                <li class="menu-item"><a href="#donate" class="nav-link">Donate</a></li>
-                                <li class="menu-item"><a href="#contact" class="nav-link">Contact Us</a></li>
-                                <li class="menu-item"><a href="#" class="nav-link">Store</a></li>
+                                <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#about" class="nav-link">About</a></li>
+                                <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#objectives" class="nav-link">Objectives</a></li>
+                                <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#donate" class="nav-link">Donate</a></li>
+                                <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#contact" class="nav-link">Contact Us</a></li>
+                                <li class="menu-item"><a href="https://samidoh.org/shop/shop/" class="nav-link">Store</a></li>
                             </ul>
                         </nav>
                     </div>

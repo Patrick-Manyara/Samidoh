@@ -1,4 +1,7 @@
-<?php include_once 'header.php'; ?>
+<?php 
+$page = 'donate';
+include_once 'header.php'; 
+?>
 <section class="page-banner bg_cover position-relative z-1">
     <div class="shape shape-one scene"><span data-depth="1"><img src="assets/images/shape/shape-1.png" alt=""></span></div>
     <div class="shape shape-two scene"><span data-depth="2"><img src="assets/images/shape/shape-2.png" alt=""></span></div>

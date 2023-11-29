@@ -1,10 +1,13 @@
-<?php include_once 'header.php'; ?>
+<?php
+$page = 'home';
+include_once 'header.php';
+?>
 <!--====== Start Hero Section ======-->
 <section class="hero-banner-v1 position-relative">
     <div class="bg-one"></div>
     <div class="bg-two"></div>
     <div class="hero-img hero-img-one scene"><span data-depth=".5"><img src="assets/images/hero/hero-one-img-1.jpg" class="wow fadeInLeft" alt="hero image"></span></div>
-    <div class="hero-img hero-img-two scene"><span data-depth=".2"><img src="assets/images/sam/sam2.jpg" class="wow fadeInLeft" alt="hero image"></span></div>
+    <div class="hero-img hero-img-two scene" id="imgcont"><span data-depth=".2"><img id="heroImg" class="wow fadeInLeft" alt="hero image"></span></div>
     <div class="shape shape-one scene"><span data-depth="1"><img src="assets/images/shape/shape-1.png" alt="shape"></span></div>
     <div class="shape shape-two scene"><span data-depth="2"><img src="assets/images/shape/shape-2.png" alt="shape"></span></div>
     <div class="shape shape-three scene"><span data-depth="3"><img src="assets/images/shape/shape-3.png" alt="shape"></span></div>
@@ -13,7 +16,28 @@
             <div class="col-xl-8 col-lg-12">
                 <div class="hero-content">
                     <h1 class="wow fadeInUp" data-wow-delay=".5s">Welcome to The Samidoh Foundation</h1>
-                    <img src="assets/images/sam/sam11.jpg" class="wow fadeInUp SamImg">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="wow fadeInUp SamImg" src="assets/images/sam/sami1.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="wow fadeInUp SamImg" src="assets/images/sam/sami3.jpeg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="wow fadeInUp SamImg" src="assets/images/sam/sami10.jpeg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
                     <p class="wow fadeInDown" data-wow-delay="1s">Samuel Muchoki, widely known as Samidoh, isn't just a musical sensation; his journey from adversity to success has inspired many. Explore the story of a Kenyan artist who conquered hardships and is now giving back to the community.</p>
                     <a href="donate" class="main-btn arrow-btn wow fadeInUp" data-wow-delay=".5s">Donate</a>
                 </div>
@@ -28,7 +52,7 @@
             <div class="col-lg-6">
                 <div class="img-holder-box mb-50">
                     <div class="img-holder wow fadeInLeft">
-                        <img src="assets/images/sam/sam6.jpg" alt="Image">
+                        <img src="assets/images/sam/sami10.jpeg" alt="Image">
                     </div>
                 </div>
             </div>
@@ -68,7 +92,7 @@
         <div class="row justify-content-center">
             <div class="StoryDiv">
                 <p>
-                    Born in 1990 in Subukia, Kenya, Samidoh's early life was marked by hardship. Orphaned at 16, he faced numerous challenges but remained determined to create a better future. Forced to drop out of school due to financial constraints, he worked hard, enrolled through the support of neighbors, and overcame immense personal loss.
+                    Born in Subukia, Kenya, Samidoh's early life was marked by hardship. Orphaned at 16, he faced numerous challenges but remained determined to create a better future. Forced to drop out of school due to financial constraints, he worked hard, enrolled through the support of neighbors, and overcame immense personal loss.
                 </p>
                 <p>
                     In 2009, after completing high school, Samidoh ventured to Nairobi, finding solace in music. Initially joining his brother's band, he later pursued training at the National Youth Service (NYS), balancing his passion for music with the discipline of the forces.
@@ -91,7 +115,7 @@
 
 
 <!--====== Start Service Section ======-->
-<section class="service-area pt-90 pb-80"  id="objectives">
+<section class="service-area pt-90 pb-80" id="objectives">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -148,10 +172,10 @@
 <!--====== End Service Section ======-->
 
 <!--====== Start CTA Section ======-->
-<section class="cta-area cta-area-v1 pt-130"  id="donate">
+<section class="cta-area cta-area-v1 pt-130" id="donate">
     <div class="container-1450">
         <div class="cta-wrapper dark-blue-bg">
-            <div class="cta-img wow fadeInDown "><img class="KidsImg" src="assets/images/sam/kids.jpeg" alt=""></div>
+            <div class="cta-img wow fadeInDown "><img class="KidsImg" src="assets/images/sam/sami11.jpeg" alt=""></div>
             <div class="row">
                 <div class="col-xl-8 col-lg-12">
                     <div class="text-wrapper wow fadeInUp">
@@ -236,7 +260,7 @@
                 <div class="img-holder mb-50 wow fadeInRight">
                     <div class="shape shape-icon-one scene"><span data-depth="1"><img src="assets/images/shape/shape-4.png" alt=""></span></div>
                     <div class="shape shape-icon-two"><span></span></div>
-                    <img src="assets/images/sam/sam10.jpeg" alt="Contact Image">
+                    <img src="assets/images/sam/sami10.jpeg" alt="Contact Image">
                 </div>
             </div>
         </div>
