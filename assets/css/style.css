@@ -1370,10 +1370,10 @@ button {
     right: 0;
     background: url(../images/shape/bg-shape-2.png) no-repeat right;
 }
-.hero-banner-v1 .hero-img{
+/* .hero-banner-v1 .hero-img{
     position: absolute;
     z-index: -1;
-}
+} */
 .hero-banner-v1 .hero-img.hero-img-one{
     bottom: 60px;
     left: 65px;
@@ -1381,10 +1381,10 @@ button {
 .hero-banner-v1 .hero-img.hero-img-one img{
     border-radius: 121px;
 }
-.hero-banner-v1 .hero-img.hero-img-two{
+/* .hero-banner-v1 .hero-img.hero-img-two{
     bottom: 80px;
     right: 150px;
-}
+} */
 .hero-banner-v1 .hero-img.hero-img-two img{
     border-radius: 245px;
 }
@@ -4448,7 +4448,6 @@ button {
     height: 60px;
     border-radius: 5px;
     padding: 0 30px;
-    font-weight: 700;
     color: var(--heading);
     border: 1px solid rgba(88, 86, 233, 0.2);
 }

@@ -1,33 +1,21 @@
 <!--====== Start Footer ======-->
-<footer class="footer-area">
+<footer class="footer-area" style="background-color: #2ca4ac;">
     <div class="container">
 
         <div class="footer-copyright">
-            <div class="row">
-                <div class="col-lg-6">
+            <div class="row" style="padding: 40px 0px;">
+                <div class="col-lg-12">
                     <div class="copyright-text">
-                        <p>&copy; <?= date('Y') ?>. All rights reserved. Powered by Vesen Computing</p>
+                        <p style="color:white;text-align: center;">&copy; <?= date('Y') ?>. All rights reserved. Powered by Vesen Computing</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="footer-nav float-lg-right">
-                        <ul>
 
-                            <li class="ListFooter"><a href="index">Home</a></li>
-                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#about">About</a></li>
-                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#objectives">Objectives</a></li>
-                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#donate">Donate</a></li>
-                            <li><a href="<?= $page == 'home' ? '' : 'index' ?>#contact">Contact Us</a></li>
-                            <li><a href="https://samidoh.org/shop/shop/">Store</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </footer><!--====== End Footer ======-->
 <!--====== back-to-top ======-->
-<a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
+<a href="#" class="back-to-top"><i class="fa-solid fa-angle-up"></i></a>
 <!--====== Jquery js ======-->
 <script src="assets/vendor/jquery-3.6.0.min.js"></script>
 <!--====== Bootstrap js ======-->
@@ -55,91 +43,23 @@
 <!--====== Main js ======-->
 <script src="assets/js/theme.js"></script>
 
-<script>
-    console.log("Script executed!");
-    document.addEventListener('DOMContentLoaded', function() {
-        const images = [
-            "assets/images/sam/sami6.jpeg",
-            "assets/images/sam/sam2.jpg",
-            "assets/images/sam/sami2.jpeg",
-            // Add more image paths as needed
-        ];
-
-        const imgElement = document.querySelector('#heroImg');
-        let currentIndex = 0;
-
-        function fadeIn() {
-            imgElement.style.opacity = parseFloat(imgElement.style.opacity) + 0.01;
-
-            if (parseFloat(imgElement.style.opacity) < 1) {
-                requestAnimationFrame(fadeIn);
-            } else {
-                setTimeout(showNextImage, 5000); // Change the delay (in milliseconds) as needed
-            }
-        }
-
-        function showNextImage() {
-            imgElement.style.opacity = 0;
-
-            setTimeout(function() {
-                imgElement.src = images[currentIndex];
-                fadeIn();
-
-                currentIndex = (currentIndex + 1) % images.length;
-            }, 1000); // Adjust the delay to match the fadeIn duration
-        }
-
-        showNextImage();
-    });
-</script>
 
 
-<script>
-  let curIndex = 0;
-  const totalItems = document.querySelectorAll('.carousel-item').length;
-  const carouselInner = document.querySelector('.carousel-inner');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const interval = 3000; // Set the interval time in milliseconds (e.g., 3000 for 3 seconds)
-
-  // Add event listeners to navigation buttons
-  nextBtn.addEventListener('click', showNext);
-  prevBtn.addEventListener('click', showPrev);
-
-  // Set up automatic sliding
-  setInterval(() => {
-    showNext();
-  }, interval);
-
-  // Function to show the next slide
-  function showNext() {
-    if (curIndex < totalItems - 1) {
-      curIndex++;
-    } else {
-      curIndex = 0;
-    }
-    updateCarousel();
-  }
-
-  // Function to show the previous slide
-  function showPrev() {
-    if (curIndex > 0) {
-      curIndex--;
-    } else {
-      curIndex = totalItems - 1;
-    }
-    updateCarousel();
-  }
-
-  // Function to update the carousel position
-  function updateCarousel() {
-    const newTransformValue = -curIndex * 100 + '%';
-    carouselInner.style.transform = 'translateX(' + newTransformValue + ')';
-  }
-</script>
 
 
 <style>
+    .HeroImage {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1000000;
+    }
+
+    .HeroSpan {
+        height: 750px;
+        width: 621px;
+    }
+
     .StoryDiv {
         padding: 10px;
     }
@@ -154,7 +74,7 @@
     }
 
     .service-item {
-        height: 25em;
+        height: 36em;
     }
 
     .KidsImg {
@@ -163,12 +83,22 @@
         object-fit: cover;
     }
 
-    .SamImg {
+    .SamImg,
+    .HiddenOnDesktop {
         display: none;
     }
 
-    .ListFooter {
+    .ListFooter li {
+        color: white;
         font-size: 14px;
+    }
+
+    .MySpan {
+        color: #ec4c34;
+    }
+
+    .MyTitle {
+        color: #2ca4ac;
     }
 
     @media screen and (max-width:600px) {
@@ -178,14 +108,157 @@
 
         .SamImg {
             display: block;
-            height: 10em;
+            height: 15em;
             border-radius: 2em;
             width: 100%;
             object-fit: cover;
         }
 
+        .HiddenOnDesktop {
+            display: block;
+        }
+
+        .MoveBelow{
+            padding: 100px 0px;
+        }
+
+        .HiddenOnMob{
+            display:none;
+        }
+    }
+</style>
+
+
+
+
+
+<style>
+    /* The actual timeline (the vertical ruler) */
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #2ca4ac;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+
+    /* Container around content */
+    .MyContainer {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+    }
+
+    /* The circles on the timeline */
+    .MyContainer::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -13px;
+        background-color: white;
+        border: 4px solid #ec4c34;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    /* Place the MyContainer to the left */
+    .left {
+        left: 0;
+    }
+
+    /* Place the MyContainer to the right */
+    .right {
+        left: 50%;
+    }
+
+    /* Add arrows to the left MyContainer (pointing right) */
+    .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+    }
+
+    /* Add arrows to the right MyContainer (pointing left) */
+    .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Fix the circle for MyContainers on the right side */
+    .right::after {
+        left: -16px;
+    }
+
+    /* The actual content */
+    .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+    }
+
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+
+        /* Place the timelime to the left */
+        .timeline::after {
+            left: 31px;
+        }
+
+        /* Full-width MyContainers */
+        .MyContainer {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+
+        /* Make sure that all arrows are pointing leftwards */
+        .MyContainer::before {
+            left: 60px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Make sure all circles are at the same spot */
+        .left::after,
+        .right::after {
+            left: 15px;
+        }
+
+        /* Make all right containers behave like the left ones */
+        .right {
+            left: 0%;
+        }
+    }
 </style>
 
 

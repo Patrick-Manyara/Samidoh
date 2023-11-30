@@ -1,3 +1,7 @@
+<?php
+$maincolor = '#2ca4ac';
+$secondary = '#ec4c34';
+?>
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior:smooth">
 
@@ -17,6 +21,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         #heroImg {
             transition: opacity 1s ease-in-out;
@@ -33,7 +38,46 @@
         </div>
     </div>
     <!--====== End Preloader ======-->
-
+    <!--====== offcanvas-panel ======-->
+    <div class="offcanvas-panel">
+        <div class="panel-overlay"></div>
+        <div class="offcanvas-panel-inner">
+            <div class="panel-logo">
+                <a href="index"><img src="assets/images/logo/logo.png" alt="Samidoh"></a>
+            </div>
+            <div class="about-us">
+                <p>
+                    The Samidoh Foundation aims to improve the lives of women, youth, and children through the transformative power of music and mentorship.
+                </p>
+            </div>
+            <div class="contact-us">
+                <h5 class="panel-widget-title" style="color:#2ca4ac;">Follow Us On Our Socials:</h5>
+                <ul style="display: flex;justify-content: flex-start;padding-top: 10px;align-items: baseline;">
+                    <li>
+                        <a href="https://www.facebook.com/samidohofficial/">
+                            <i style="background-color: #ec4c34;" class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/samidoh_muchoki/">
+                            <i style="background-color: #ec4c34;" class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/SamSamido">
+                            <i style="background-color: #ec4c34;" class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@samidoh_muchoki?lang=en">
+                            <i style="background-color: #ec4c34;" class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="panel-close"><i class="fal fa-times"></i></a>
+        </div>
+    </div><!--====== offcanvas-panel ======-->
     <!--====== Start Header Section ======-->
     <header class="theme-header transparent-header">
         <!-- header Navigation -->
@@ -46,7 +90,7 @@
                     </div>
                     <div class="nav-menu">
                         <!-- Navbar Close -->
-                        <div class="navbar-close"><i class="far fa-times"></i></div>
+                        <div class="navbar-close"><i class="fal fa-times"></i></div>
                         <!-- Nav Search -->
 
                         <!-- Main Menu -->
@@ -55,9 +99,11 @@
                                 <li class="menu-item"><a href="index" class="nav-link">Home</a></li>
                                 <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#about" class="nav-link">About</a></li>
                                 <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#objectives" class="nav-link">Objectives</a></li>
-                                <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#donate" class="nav-link">Donate</a></li>
+
                                 <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#contact" class="nav-link">Contact Us</a></li>
                                 <li class="menu-item"><a href="https://samidoh.org/shop/shop/" class="nav-link">Store</a></li>
+                                <li class="menu-item"><a href="https://samidoh.org/shop/gallery" class="nav-link">Gallery</a></li>
+                                <li class="menu-item"><a href="<?= $page == 'home' ? '' : 'index' ?>#donate" class="nav-link">Donate</a></li>
                             </ul>
                         </nav>
                     </div>
